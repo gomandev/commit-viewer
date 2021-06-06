@@ -1,3 +1,4 @@
+import { Logo } from '@modules/atom/logo';
 import React, { FC } from 'react';
 import styled from 'styled-components';
 import { Container } from '../Container';
@@ -7,7 +8,7 @@ export const Navbar: FC = () => {
     <Header>
       <Container>
         <Nav>
-          <Logo href="/">CommitViewer</Logo>
+          <Logo>CommitViewer</Logo>
           <Ul>
             <li>
               <a href="#" style={{ marginRight: '3em' }}>
@@ -30,16 +31,13 @@ const Header = styled.header`
 `;
 
 const Nav = styled.nav`
-  width: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-`;
-
-const Logo = styled.a`
-  color: ${({ theme }) => theme.primary};
-  font-size: 28px;
-  font-weight: 700;
+  @media screen and (max-width: 540px) {
+    flex-direction: column;
+    justify-content: center !important;
+  }
 `;
 const Ul = styled.ul`
   display: inline-flex;
@@ -50,5 +48,8 @@ const Ul = styled.ul`
   a {
     color: ${({ theme }) => theme.primary};
     text-decoration: none;
+  }
+  @media screen and (max-width: 540px) {
+    padding: 0;
   }
 `;

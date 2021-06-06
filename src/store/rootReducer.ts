@@ -1,8 +1,8 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { productSlice } from '../store/ducks/products';
+import { commitSlice } from './ducks/commit';
 
 const rootReducer = combineReducers({
-  product: productSlice.reducer,
+  product: commitSlice.reducer,
 });
 
 export type RootState = ReturnType<typeof Object>;

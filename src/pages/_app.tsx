@@ -8,10 +8,11 @@ const theme = {
   primary: '#18214D',
   secondary: '#F3663F',
   accent: '#ffffff',
-  corner: '10px',
+  corner: '8px',
   transparent: 'transparent',
-  gray: '#00000012',
-  blueGray: '#f9feff',
+  gray: '#DFE4EA',
+  lightGray: '#EFF2F6',
+  dark: '#18214D',
   shadow: '0px 3px 10px #00000012',
 };
 

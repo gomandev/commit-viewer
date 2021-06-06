@@ -1,8 +1,31 @@
+import { Masthead } from '@modules/sections/MasterHead';
 import { Navbar } from '@modules/sections/Navbar';
+import { Search } from '@modules/sections/Search';
 import Head from 'next/head';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  commitSelector,
+  fetchCommits,
+  fetchTrending,
+  handleKeyword,
+} from 'store/ducks/commit';
+import { useRouter } from 'next/router';
 
 export default function Home() {
+  const { isFetching, trending } = useSelector(commitSelector);
+  const dispatch = useDispatch();
+  const router = useRouter();
+  if (isFetching) {
+    router.push('/commit');
+  }
+  useEffect(() => {
+    dispatch(fetchTrending());
+  }, []);
+  console.log(trending);
+  const data = trending.slice(0, 5);
+
   return (
     <>
       <Head>
@@ -16,6 +39,8 @@ export default function Home() {
         />
       </Head>
       <Navbar />
+      <Masthead />
+      <Search data={data} />
     </>
   );
 }
