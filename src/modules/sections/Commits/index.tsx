@@ -11,7 +11,7 @@ interface IProps {
 export const Commits: FC<IProps> = ({ data, index, sm }: IProps) => {
   const { avatar_url, login } = data.author;
   const { width } = useViewport();
-  const BREAKPOINT = 1024;
+  const BREAKPOINT = 540;
   if (width < BREAKPOINT) {
     return (
       <Flex key={index}>
@@ -118,6 +118,8 @@ const Text = styled.p`
   @media screen and (max-width: 540px) {
     font-size: 1rem;
     margin-bottom: 1em;
+    justify-self: start;
+    align-self: start;
   }
 `;
 

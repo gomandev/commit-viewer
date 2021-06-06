@@ -36,8 +36,24 @@ const Flex = styled.div`
     @media screen and (max-width: 540px) {
       display: none;
     }
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+      display: none;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      display: none;
+    }
   }
   @media screen and (max-width: 540px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     flex-direction: column;
     align-items: center;
     justify-content: center;

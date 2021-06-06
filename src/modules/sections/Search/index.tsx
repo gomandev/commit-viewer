@@ -70,8 +70,28 @@ const Premade = styled.div`
       padding: 10px 20px !important;
       margin-right: 0;
     }
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+      margin-bottom: 16px;
+      padding: 10px 20px !important;
+      margin-right: 0;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      margin-bottom: 16px;
+      padding: 10px 20px !important;
+      margin-right: 0;
+    }
   }
   @media screen and (max-width: 540px) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
     flex-direction: column;
     align-items: center;
     justify-content: center;

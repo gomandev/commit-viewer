@@ -49,6 +49,12 @@ const Search = styled.div`
     @media screen and (max-width: 540px) {
       width: 100%;
     }
+    @media only screen and (min-width: 1024px) and (max-height: 1366px) and (-webkit-min-device-pixel-ratio: 1.5) {
+      width: 494px;
+    }
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 1) {
+      width: 394px;
+    }
   }
   div {
     position: relative;
