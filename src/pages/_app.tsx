@@ -1,5 +1,4 @@
 import '../styles/globals.css';
-import '../styles/responsive.css';
 import { ThemeProvider } from 'styled-components';
 import { Provider } from 'react-redux';
 import store from '../store/config';
