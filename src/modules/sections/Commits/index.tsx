@@ -1,3 +1,4 @@
+import useViewport from 'hooks/useViewport';
 import { FC } from 'react';
 import styled from 'styled-components';
 
@@ -9,7 +10,9 @@ interface IProps {
 
 export const Commits: FC<IProps> = ({ data, index, sm }: IProps) => {
   const { avatar_url, login } = data.author;
-  if (sm) {
+  const { width } = useViewport();
+  const BREAKPOINT = 1024;
+  if (width < BREAKPOINT) {
     return (
       <Flex key={index}>
         <Text>{data.commit.message}</Text>
@@ -73,12 +76,37 @@ const Inner = styled.div`
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    @media screen and (max-width: 540px) {
+      margin-right: 0;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    p {
+      @media screen and (max-width: 540px) {
+        margin-left: 1em;
+        font-size: 1rem;
+      }
+    }
+  }
+  p {
+    @media screen and (max-width: 540px) {
+      font-size: 1rem;
+      color: ${({ theme }) => theme.primary};
+    }
+  }
+  @media screen and (max-width: 540px) {
+    justify-content: space-between;
+    width: 100%;
   }
 `;
 const Thumb = styled.img`
   width: 60px;
   height: 60px;
   border-radius: 50%;
+  @media screen and (max-width: 540px) {
+    width: 30px;
+    height: 30px;
+  }
 `;
 
 const Text = styled.p`
@@ -87,6 +115,10 @@ const Text = styled.p`
   display: flex;
   justify-self: center;
   align-self: center;
+  @media screen and (max-width: 540px) {
+    font-size: 1rem;
+    margin-bottom: 1em;
+  }
 `;
 
 const Name = styled.p`
