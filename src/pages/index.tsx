@@ -30,7 +30,7 @@ export default function Home() {
     <>
       <Head>
         <title>Homepage</title>
-        <meta name="description" content="Dado Tech Challange" />
+        <meta name="description" content="Github Commit Viewer" />
         <link
           rel="stylesheet"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
